@@ -1,6 +1,6 @@
 # If the RAILS_ENV is not +test+, open up <tt>RAILS_ROOT/config/email.yml</tt>
 # and set ActionMailer::Base's SMTP settings using that.
-if RAILS_ENV != 'test'
+if RAILS_ENV != 'test' && RAILS_ENV != 'cucumber'
   c = YAML::load(File.open("#{RAILS_ROOT}/config/email.yml"))
 
   ActionMailer::Base.smtp_settings = {
